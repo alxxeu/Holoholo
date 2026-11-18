@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What's new in 0.1.13 — Holoholo</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6e6e73;
+    --accent: #2a3b77;
+    --border: #e5e5ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1e;
+      --fg: #f2f2f7;
+      --muted: #9a9aa0;
+      --accent: #8fa2e8;
+      --border: #3a3a3c;
+    }
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 40px; }
+  h2 { font-size: 1.05rem; margin-top: 32px; margin-bottom: 8px; }
+  p { margin: 0 0 8px; }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+  footer { color: var(--muted); font-size: 0.85rem; }
+  .earlier { list-style: none; padding-left: 0; }
+  .earlier li { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+  <h1>What's new</h1>
+  <p class="meta">Holoholo for macOS · Version 0.1.13 · November 19, 2026</p>
+  <h2>New</h2>
+  <ul>
+    <li><strong>Translate pages.</strong> On a page in another language, a translate icon appears in the address bar. One click translates the page; click again to see the original. Choose the language in Settings → General, or right-click the icon. Page text is sent to Google Translate only when you click.</li>
+    <li><strong>Switch tabs with ⌃Tab.</strong> Hold Control and press Tab to move through the tabs of your Space, most recent first, with previews. Release Control to switch, press Esc to cancel. You can also point at a tab or click it.</li>
+    <li><strong>Colors for folders and icons.</strong> Right-click a folder and choose Color… When you pick an icon for a pinned tab or a favorite, pick its color right there.</li>
+    <li><strong>Optional crash reports.</strong> If Holoholo or a page crashes, a technical report can be sent to help us fix it. It is off by default; turn it on in Settings → Privacy (new profiles are asked on the last step of the welcome tour).</li>
+  </ul>
+  <h2>Fixed</h2>
+  <ul>
+    <li>Closing the extensions grid with the arrow no longer opens it again right away.</li>
+    <li>Scrolling up in a chat or a list inside a page no longer reloads the page.</li>
+  </ul>
+  <h2>Earlier versions</h2>
+  <ul class="earlier">
+    <li><a href="0.1.12.html">0.1.12</a></li>
+    <li><a href="0.1.11.html">0.1.11</a></li>
+    <li><a href="0.1.10.html">0.1.10</a></li>
+  </ul>
+  <hr>
+  <footer>Holoholo — a browser for macOS.</footer>
+</body>
+</html>
