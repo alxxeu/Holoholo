@@ -15,6 +15,8 @@ Download `holoholo.dmg` from the latest release, open it and drag Holoholo to Ap
 - **Tabs live in the sidebar**, grouped into Spaces. Swipe with two fingers to flip between Spaces, each one remembers its last tab.
 - **Pinned tabs, folders and favorites** keep your sites where you left them; closed tabs go to an archive instead of disappearing.
 - **One command bar** for addresses, search and switching tabs.
+- **⌃Tab** flips through your recent tabs with previews, like ⌘Tab does for apps.
+- **Translate pages** in one click from the address bar.
 - **Sort** tidies a messy tab list into topic groups. The grouping is done by an on-device model, nothing leaves your Mac.
 - **Split View** puts two tabs side by side.
 - **Private Space** is a locked space for private browsing, opened with Touch ID. Its tabs are stored encrypted, cookies and site data last only until you quit.
