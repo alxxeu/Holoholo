@@ -3,6 +3,15 @@
     <channel>
         <title>Holoholo</title>
         <item>
+            <title>0.1.14</title>
+            <pubDate>Thu, 19 Nov 2026 18:34:35 +0400</pubDate>
+            <sparkle:version>14</sparkle:version>
+            <sparkle:shortVersionString>0.1.14</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://github.com/alxxeu/Holoholo/releases/download/v0.1.14-alpha/holoholo.dmg" length="153734543" type="application/octet-stream" sparkle:edSignature="Lig2Vs/vRCzJxdrif0sRuvrGYVd6TPx31uXhuI/ff8evqU3zL7MNftTF1pv7TRx/26Q1Bh4Mvpg2pBxqMPOyCQ=="/>
+        </item>
+        <item>
             <title>0.1.13</title>
             <pubDate>Thu, 19 Nov 2026 01:34:30 +0400</pubDate>
             <sparkle:version>13</sparkle:version>
@@ -19,15 +28,6 @@
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
             <enclosure url="https://github.com/alxxeu/Holoholo/releases/download/v0.1.12-alpha/holoholo.dmg" length="153637707" type="application/octet-stream" sparkle:edSignature="hr69uza7xM4RNvTqz/bSKjg/wDDK1i1gLVnDuWQEJBrx/4tInOuGbFK+hoW4U/+dNKlPK7vLgotWu8y7dyU2DQ=="/>
-        </item>
-        <item>
-            <title>0.1.11</title>
-            <pubDate>Fri, 13 Nov 2026 05:00:48 +0700</pubDate>
-            <sparkle:version>11</sparkle:version>
-            <sparkle:shortVersionString>0.1.11</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <enclosure url="https://github.com/alxxeu/holoholo/releases/download/v0.1.11-alpha/holoholo.dmg" length="153643583" type="application/octet-stream" sparkle:edSignature="dzMK4d88KObbPqs35K78ZupbDPaRxWp28KjXHrb/EmmeLpqG61xZ3rgpNqelj8fhwiXMaI4tuow1+kHEBFZGBw=="/>
         </item>
     </channel>
 </rss>
