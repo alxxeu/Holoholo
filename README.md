@@ -28,6 +28,7 @@ Download `holoholo.dmg` from the latest release, open it and drag Holoholo to Ap
 ## Limitations
 - No password manager or autofill, one window
 - No passkey support yet
+- Protected media (Widevine) plays without a VMP signature, so Spotify, Netflix and other services that require it do not play
 - Safe Browsing warns about known phishing and malware sites; downloaded files are not scanned
 - Extensions do not run in Private Space
 
