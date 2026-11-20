@@ -2,7 +2,7 @@
 
 Holoholo is a native macOS browser written in fast Swift and powered by Chromium. It is quick, modern and carefully thought through: tabs live in a sidebar and are organized into Spaces, so work, study and personal browsing stay apart. Pages are rendered by Chromium, so websites behave as they do in Chrome, and extensions from the Chrome Web Store work.
 
-**Alpha, closed test.** New builds appear on the [Releases](../../releases) page, and the app updates itself.
+**Beta.** New builds appear on the [Releases](../../releases) page, and the app updates itself.
 
 ## Requirements
 - macOS 26 or later
@@ -19,6 +19,9 @@ Download `holoholo.dmg` from the latest release, open it and drag Holoholo to Ap
 - **Translate pages** in one click from the address bar.
 - **Sort** tidies a messy tab list into topic groups. The grouping is done by an on-device model, nothing leaves your Mac.
 - **Split View** puts two tabs side by side.
+- **Peek** opens a link in a card over the page with a shift-click; keep it as a tab or close it.
+- **Space themes**: give each Space one of 11 watercolors.
+- **Links from other apps** open in the Space you choose for their site, or in a small Peek window.
 - **Private Space** is a locked space for private browsing, opened with Touch ID. Its tabs are stored encrypted, cookies and site data last only until you quit.
 - **Tweaks** change how a site looks: hide elements, pick a font, narrow the page or add your own CSS.
 - **Chrome extensions** live in the sidebar too: pin the ones you use, the rest sit in one tidy grid.
@@ -31,6 +34,7 @@ Download `holoholo.dmg` from the latest release, open it and drag Holoholo to Ap
 - Protected media (Widevine) plays without a VMP signature, so Spotify, Netflix and other services that require it do not play
 - Safe Browsing warns about known phishing and malware sites; downloaded files are not scanned
 - Extensions do not run in Private Space
+- The Back to tab button in Picture in Picture doesn't work yet
 
 ## Problems and questions
 - Bugs and ideas: open an [issue](../../issues)
