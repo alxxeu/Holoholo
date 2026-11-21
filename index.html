@@ -258,7 +258,8 @@
   .feat .lead { font-size: 18px; color: rgba(255,255,255,.82); max-width: 640px; margin: 0; }
   .pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 36px; }
   .pcard { border-radius: 22px; background: rgba(255,255,255,.08); box-shadow: inset 0 0 0 .5px rgba(255,255,255,.2); overflow: hidden; }
-  .pcard .frag { position: relative; height: 300px; overflow: hidden; }
+  .pcard .frag { position: relative; aspect-ratio: 526 / 300; overflow: hidden; }
+  .art { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
   .pcard .txt { padding: 20px 24px 24px; }
   .pcard b.h { font-size: 19px; font-weight: 600; letter-spacing: -.2px; display: block; }
   .pcard ul { margin: 10px 0 0; padding: 0; list-style: none; }
@@ -371,12 +372,12 @@
   .more > h2 { font-size: 40px; font-weight: 600; letter-spacing: -1px; margin: 0 0 30px; }
   .mgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .mi { border-radius: 20px; padding: 20px; background: rgba(255,255,255,.08); box-shadow: inset 0 0 0 .5px rgba(255,255,255,.2); }
-  .mi .mfrag { position: relative; height: 160px; margin: -20px -20px 18px; border-radius: 20px 20px 0 0; overflow: hidden; }
+  .mi .mfrag { position: relative; aspect-ratio: 347 / 160; margin: -20px -20px 18px; border-radius: 20px 20px 0 0; overflow: hidden; }
   .mi .tile2 { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; font-size: 25px; margin-bottom: 14px; box-shadow: inset 0 0 0 .5px rgba(255,255,255,.3); }
   .mi b { display: block; font-size: 17px; font-weight: 600; letter-spacing: -.2px; }
   .mi p { margin: 4px 0 0; font-size: 14.5px; color: rgba(255,255,255,.75); }
-  @media (max-width: 860px) { .pgrid.one .pcard { grid-template-columns: 1fr; } .mgrid { grid-template-columns: 1fr 1fr; } .caps3 { grid-template-columns: repeat(2, 1fr); inset: 14px; } .caps3 div { padding: 8px; } .caps3 div span { width: 30px; height: 30px; font-size: 17px; margin-bottom: 4px; } }
-  @media (max-width: 600px) { .mgrid { grid-template-columns: 1fr; } .more > h2 { font-size: 32px; } .ask { width: 290px; margin-left: -145px; } }
+  @media (max-width: 860px) { .pgrid.one .pcard { grid-template-columns: 1fr; } .mgrid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .mgrid { grid-template-columns: 1fr; } .more > h2 { font-size: 32px; } }
   .pbadge { width: 20px; height: 20px; border-radius: 5px; flex: none; display: grid; place-items: center; background: #fff; box-shadow: inset 0 0 0 .5px rgba(0,0,0,.2); margin-right: -6px; }
   .pbadge .fi { width: 14px; height: 14px; font-size: 9.5px; border-radius: 3px; }
   .agent { margin-left: auto; font-size: 15px; color: rgba(255,255,255,.85); flex: none; }
@@ -834,6 +835,17 @@
       center(`<div style="width:250px;text-align:center"><div style="width:52px;height:52px;margin:0 auto 10px;border-radius:15px;background:#e5484d;display:grid;place-items:center;font-size:28px;box-shadow:0 10px 30px rgba(229,72,77,.4)">${I('f-shield-check')}</div><b style="font-size:14px">Deceptive site ahead</b><div style="font-size:11.5px;color:rgba(255,255,255,.65);margin-top:3px">Checked on this Mac. Nothing was sent.</div></div>`)],
   ];
   $('#more').innerHTML = `<h2>And more in Holoholo</h2><div class="mgrid">${MORE.map(([th, b, p, frag]) => `<div class="mi"><div class="mfrag" style="${g(th)}">${frag}</div><b>${b}</b><p>${p}</p></div>`).join('')}</div>`;
+
+  // Картинки карточек — макет фиксированного размера (ширина карточки на десктопе), целиком масштабируется под карточку:
+  // на любом экране выглядят одинаково, без перестройки раскладки
+  [['.pcard .frag', 526, 300], ['.mi .mfrag', 347, 160]].forEach(([sel, W, H]) => $$(sel).forEach(f => {
+    const art = Object.assign(document.createElement('div'), { className: 'art' });
+    art.style.width = W + 'px'; art.style.height = H + 'px';
+    while (f.firstChild) art.appendChild(f.firstChild);
+    f.appendChild(art);
+    const fit = () => art.style.transform = `scale(${f.clientWidth / W})`;
+    new ResizeObserver(fit).observe(f); fit();
+  }));
 })();
 </script>
 </body>
