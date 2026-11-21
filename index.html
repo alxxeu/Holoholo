@@ -483,7 +483,7 @@
 <header>
   <a class="mark" href="#"><svg viewBox="0 0 36 22" fill="#fff"><use href="#logo"/></svg><span class="round" style="font-size:16px">Holoholo</span></a>
   <nav>
-    <a class="hide" href="notes/0.2.0.html">What's new</a>
+    <a class="hide" href="notes/0.2.1.html">What's new</a>
     <a class="hide" href="https://github.com/alxxeu/Holoholo">GitHub</a>
     <a href="https://github.com/alxxeu/Holoholo/releases/latest/download/holoholo.dmg">Download</a>
   </nav>
@@ -540,7 +540,7 @@
 <footer>
   <span>Holoholo — a browser for macOS. Icons by Ionicons.</span>
   <nav>
-    <a href="notes/0.2.0.html">What's new</a>
+    <a href="notes/0.2.1.html">What's new</a>
     <a href="https://github.com/alxxeu/Holoholo/blob/main/PRIVACY.md">Privacy</a>
     <a href="https://github.com/alxxeu/Holoholo/blob/main/SECURITY.md">Security</a>
     <a href="https://github.com/alxxeu/Holoholo">GitHub</a>
@@ -608,7 +608,7 @@
   const T = {
     notes:   { t: 'Holoholo cheat sheet', h: 'tidepool.notes/holoholo', c: '#c9a227', ic: 'note', site: 'cheat', sym: 'lightning', tint: 'yellow' },
     dict:    { t: 'holoholo — Hawaiian Dictionary', h: 'wehewehe.example/holoholo', c: '#2f4a4f', ic: 'translate', site: 'dict' },
-    release: { t: "What's new in Holoholo", h: 'alxxeu.github.io/Holoholo/notes', c: '#2a3b77', ic: 'sparkle', site: 'release' },
+    release: { t: "What's new in Holoholo", h: 'holoholo.dev/notes/0.2.1', c: '#2a3b77', ic: 'sparkle', site: 'release' },
     journal: { t: 'Browsing like a walk', h: 'slowjournal.blog/walk', c: '#5b3f8f', ic: 'book-open', site: 'essay' },
     kitchen: { t: 'Weeknight poke bowl', h: 'kitchendaily.com/poke', c: '#d2553a', ic: 'bowl-food', site: 'recipe' },
     guide:   { t: 'Hilo, Hawaii — Island Guide', h: 'islandguide.example/hilo', c: '#b0562f', ic: 'compass', site: 'guide', peek: true },
@@ -657,10 +657,9 @@
       <div class="pos">noun</div><ol start="2"><li>An outing; a trip taken for the joy of it.</li></ol>
       <div class="ety">From <i>holo</i>, to run, sail, ride, go. Doubled, one trip becomes an easy, unhurried wandering. “Going holoholo”: heading out to see where the day takes you.</div></div>
       <aside><h4>Nearby</h4><div>holo</div><div>holokai</div><div class="cur">holoholo</div><div>holokū</div><h4 style="margin-top:18px">See also</h4><div>hele</div><div>kaʻahele</div></aside></div></div>`,
-    release: () => `<div class="site s-rel"><div class="wrapr"><span class="badge"><svg viewBox="0 0 36 22" fill="#2a3b77"><use href="#logo"/></svg>Holoholo</span><h2 style="margin-top:14px">What's new</h2><div class="meta">Holoholo for macOS · Version 0.2.0 beta · November 21, 2026</div>
-      <p style="font-size:14.5px">🎉 <b>Holoholo is now in open beta!</b> Thank you to everyone who tried the alpha.</p>
-      <h3>✨ New</h3><ul><li><b>Peek.</b> Shift-click a link to open it in a card over the page. Press ⌘O to keep it as a tab.</li><li><b>Space themes.</b> Give each Space one of 11 watercolors.</li><li><b>Auto-archive.</b> Tabs you haven't visited for a day, three days or a week move to the Archive.</li><li><b>Picture in Picture follows you.</b></li><li><b>Clean links.</b> Copied links lose utm_ and fbclid.</li></ul>
-      <h3>💫 Improved</h3><ul><li>Closing a tab takes you back to the tab you were on before.</li><li>Private Space has a new ghost icon 👻.</li></ul></div></div>`,
+    release: () => `<div class="site s-rel"><div class="wrapr"><span class="badge"><svg viewBox="0 0 36 22" fill="#2a3b77"><use href="#logo"/></svg>Holoholo</span><h2 style="margin-top:14px">What's new</h2><div class="meta">Holoholo for macOS · Version 0.2.1 beta · November 21, 2026</div>
+      <p style="font-size:14.5px">🏡 <b>Holoholo has a home: holoholo.dev.</b></p>
+      <h3>💫 Improved</h3><ul><li>Links from other apps now open in a small Peek window by default.</li><li>Holoholo checks for updates and downloads them in the background on its own.</li><li>Pull to reload: the trackpad clicks along the pull, faster as you pull further.</li><li>If you deny an app access in Companions, Holoholo remembers and doesn't ask again.</li><li>The Holoholo name on the welcome screen and in the installer now matches the website.</li></ul></div></div>`,
     essay: () => `<div class="site s-essay"><div class="mast">Slow Journal</div><div class="art"><div class="kick">Essay</div><h2>Browsing like a walk</h2><div class="by"><i></i>Mele Akana · 6 min read</div>
       <p>A good walk has no list. You turn where something catches your eye and come home with more than you went out for.</p>
       <p>The web used to feel like that. Then it turned into forty tabs and a quiet sense of unfinished business.</p>
@@ -854,8 +853,8 @@
     const DMG = 'https://github.com/alxxeu/Holoholo/releases/latest/download/holoholo.dmg', SITE = 'https://holoholo.dev/';
     $$(`a[href="${DMG}"]`).forEach(a => {
       const big = a.classList.contains('btn'), label = 'Continue on Mac';
-      // в шапке на телефоне ссылки нет: кнопка «Continue on Mac» — сразу под логотипом
-      if (!big) { a.remove(); return; }
+      // в шапке на телефоне вместо скачивания — «What's new»: кнопка «Continue on Mac» и так сразу под логотипом
+      if (!big) { a.remove(); $('header nav a[href^="notes/"]')?.classList.remove('hide'); return; }
       a.href = SITE;
       a.textContent = label;
       a.addEventListener('click', async e => {
