@@ -846,6 +846,31 @@
     const fit = () => art.style.transform = `scale(${f.clientWidth / W})`;
     new ResizeObserver(fit).observe(f); fit();
   }));
+
+  // На телефонах и планшетах .dmg не нужен: кнопки скачивания отправляют на Mac адрес сайта через системное меню «Поделиться».
+  // Только адрес, без текста: с текстом AirDrop может прислать на Mac заметку вместо ссылки. iPadOS выдаёт себя за Mac — его отличает сенсорный экран.
+  const mobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+  if (mobile) {
+    const DMG = 'https://github.com/alxxeu/Holoholo/releases/latest/download/holoholo.dmg', SITE = 'https://holoholo.dev/';
+    $$(`a[href="${DMG}"]`).forEach(a => {
+      const big = a.classList.contains('btn'), label = 'Continue on Mac';
+      // в шапке на телефоне ссылки нет: кнопка «Continue on Mac» — сразу под логотипом
+      if (!big) { a.remove(); return; }
+      a.href = SITE;
+      a.textContent = label;
+      a.addEventListener('click', async e => {
+        e.preventDefault();
+        if (navigator.share) {
+          try { await navigator.share({ title: 'Holoholo — a browser for Mac', url: SITE }); }
+          catch { /* закрыли меню — ничего не делаем */ }
+          return;
+        }
+        // браузер без меню «Поделиться»: адрес копируется
+        try { await navigator.clipboard.writeText(SITE); a.lastChild.textContent = 'Link copied'; setTimeout(() => a.lastChild.textContent = label, 2000); }
+        catch { /* копирование недоступно — кнопка просто ведёт на сайт */ }
+      });
+    });
+  }
 })();
 </script>
 </body>
