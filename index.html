@@ -39,12 +39,8 @@
   /* Акварель Haze на весь фон страницы; её цвет идёт за Space в окне */
   .haze { position: absolute; inset: 0; overflow: hidden; background: var(--hz-base, #223066); transition: background-color .8s ease; }
   .haze-layer { position: absolute; transform-origin: 0 0; }
-  .haze-layer i { position: absolute; border-radius: 50%; transition: background-color .8s ease; will-change: transform; }
+  .haze-layer i { position: absolute; border-radius: 50%; transition: background-color .8s ease; }
   #bg { position: fixed; left: 0; right: 0; top: -20vh; bottom: -20vh; z-index: -2; }
-  /* Safari 26 красит свои панели по фиксированной полосе у края экрана; без неё — цветом фона страницы (тёмные полосы).
-     Прозрачная полоса без своего цвета: Safari берёт цвет пикселей под ней, то есть дымки (WebKit, LocalFrameView::fixedContainerEdges) */
-  .edge { position: fixed; left: 0; right: 0; height: 16px; z-index: 100; pointer-events: none; }
-  .edge::after { content: ''; }
   .grain { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
@@ -397,7 +393,6 @@
 </head>
 <body>
 <div id="bg" class="haze"></div>
-<div class="edge" style="top:0"></div><div class="edge" style="bottom:0"></div>
 <div class="grain"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
