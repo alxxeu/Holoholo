@@ -40,6 +40,6 @@ Download `holoholo.dmg` from the latest release, open it and drag Holoholo to Ap
 - Bugs and ideas: open an [issue](../../issues)
 - Security: see [SECURITY.md](SECURITY.md)
 
-[Privacy](PRIVACY.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
+[Terms of use](TERMS.md) · [Privacy](PRIVACY.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
 
 © 2026 Aleksei Trofimov
