@@ -31,7 +31,7 @@
   .round, .hero h1.round { font-family: "Fredoka Holo", system-ui, sans-serif; font-weight: 500; letter-spacing: 0; font-synthesis: none; }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; color: #fff; background: #223066; overflow-x: hidden; line-height: 1.5; -webkit-font-smoothing: antialiased;
+  body { margin: 0; color: #fff; background: #42528f; overflow-x: hidden; line-height: 1.5; -webkit-font-smoothing: antialiased;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif; }
   a { color: #fff; }
   svg.i { width: 1em; height: 1em; fill: currentColor; flex: none; display: block; }
@@ -595,6 +595,8 @@
   }
   function paint(name) {
     const p = P[name];
+    // Safari на iPhone подкрашивает свои панели цветом фона страницы: средний цвет темы, чтобы панели сливались с дымкой
+    document.body.style.backgroundColor = hx([0, 2, 4].map(j => Math.round(p.reduce((s, c) => s + parseInt(c.slice(j, j + 2), 16), 0) / p.length).toString(16).padStart(2, '0')).join(''));
     hazes.forEach(h => { h.el.style.setProperty('--hz-base', hx(p[0])); h.dots.forEach((d, i) => d.style.backgroundColor = hx(p[1 + i])); });
   }
   hazes.forEach(h => draw(h, 40));
